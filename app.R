@@ -4,7 +4,26 @@ library(shinydashboard)
 ui <- dashboardPage(
   dashboardHeader(
     title = "First Dashbord",
-    dropdownMenuOutput("messages")
+    dropdownMenu(
+      type = "messages",
+      messageItem(
+        from = "sales Dept",
+        message = "sales are steady this month."
+      ),
+      messageItem(
+        from = "User",
+        message = "How do I register?",
+        icon = icon("question"),
+        time = "13:45"
+      ),
+      messageItem(
+        from = "Support",
+        message = "The new dashboard looks great!",
+        icon = icon("life-ring"),
+        time = "13:45"
+      )
+    ),
+    dropdownMenuOutput("messageMenu")
   ),
   dashboardSidebar(
     sidebarMenu(
@@ -48,18 +67,16 @@ ui <- dashboardPage(
   )
 )
 
-dropdownMenu(
-  type = "messages",
-  messageItem(
-    from = "Sales Dept",
-    message = "Sales are steady this month."
-  ),
-  messageItem(
-    from = "New User",
-    message = "How do I register?",
-    icon = icon("question")
+    messageData <- data.frame(
+    from = c("sales Dept", "User", "Support"),
+    message = c(
+      "sales are steady this month.",
+      "How do I register?",
+      "The new dashboard looks great!"
+    ),
+    stringsAsFactors = FALSE
   )
-)
+
 
 server <- function(input, output) {
   set.seed(122)
@@ -68,6 +85,16 @@ server <- function(input, output) {
   output$plot1 <- renderPlot({
     data <- histdata[seq_len(input$slider)]
     hist(data)
+  })
+
+
+  output$messageMenu <- renderMenu({
+
+    msgs <- apply(messageData, 1, function(row) {
+      messageItem(from = row[["from"]], message = row[["message"]])
+    })
+
+    dropdownMenu(type = "messages", .list = msgs)
   })
 }
 
