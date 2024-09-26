@@ -4,13 +4,12 @@ library(shinydashboard)
 source("sidebar.R")
 source("body.R")
 source("header.R")
-source("server.R")
 
 ui <- dashboardPage(
   header,
   sidebar,
   body
-)
+) 
 
 messageData <- data.frame(
   from = c("sales Dept", "User", "Support"),

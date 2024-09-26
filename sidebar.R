@@ -2,6 +2,7 @@ sidebar <- dashboardSidebar(
     sidebarMenu(
       menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
       menuItem("Widgets", tabName = "widgets", icon = icon("th")),
-      menuItem("Charts", tabName = "charts", icon = icon("bar-chart-o"))
+      menuItem("Charts", tabName = "charts", icon = icon("bar-chart-o"),badgeLabel = "new", badgeColor = "green"),
+      menuItem("Google", icon = icon("google"), href = "http://www.google.com")
     )
   )
