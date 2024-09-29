@@ -61,7 +61,7 @@ server <- function(input, output) {
       color = "yellow"
     )
   })
-
+                
   output$progressBox1 <- renderInfoBox({
     infoBox(
       "Progress",

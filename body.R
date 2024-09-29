@@ -116,6 +116,25 @@ body <- dashboardBody(
         valueBoxOutput("valueprogressBox"),
         valueBoxOutput("valueapprovalBox")
       )
+    ),
+    tabItem(
+      tabName = "column",
+      fluidRow(
+        column(
+          width = 4,
+          box("Box Title", width = NULL, status = "primary", "Box content"),
+          box("Title 1", width = NULL, solidHeader = TRUE, status = "primary", "Box Content"),
+          box(width = NULL, background = "yellow", "Box Content")
+        ),
+        column(
+          width = 4,
+          box("Column 2", status = "warning", width = NULL, background = "green")
+        ),
+        column(
+          width = 4,
+          box("Column 3", status = "danger", width = NULL)
+        )
+      )
     )
   )
 )
