@@ -1,4 +1,12 @@
 body <- dashboardBody(
+  tags$head(
+    tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")
+  ),
+  tags$head(
+    tags$style(HTML(
+      '.my-class { background-color: #010110; }'
+    ))
+  ), 
   tabItems(
     # First tab content
     tabItem(
@@ -19,7 +27,7 @@ body <- dashboardBody(
     ),
     tabItem(
       tabName = "widgets",
-      h2("Widgets tab content")
+      h2("Widgets tab content", class = "my-class"),
     ),
     tabItem(
       tabName = "charts",

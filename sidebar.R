@@ -1,4 +1,5 @@
 sidebar <- dashboardSidebar(
+    width = 300,
     sidebarMenu(
       menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
       menuItem("Widgets", tabName = "widgets", icon = icon("th")),
@@ -12,6 +13,6 @@ sidebar <- dashboardSidebar(
       menuItem("infoBox", icon = icon("info"), tabName = "infoBox"),
       menuItem("valueBox", icon = icon("value"), tabName = "valueBox"),
       menuItem("column", icon = icon("columns"), tabName = "column"),
-      menuItem("columnrow", icon = icon("columns"), tabName = "columnrow")
+      menuItem("columnrow", icon = icon("user"), tabName = "columnrow")
     )
   )

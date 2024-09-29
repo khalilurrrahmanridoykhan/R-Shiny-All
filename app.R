@@ -9,7 +9,7 @@ ui <- dashboardPage(
   skin = "green",
   header,
   sidebar,
-  body
+  body          
 )   
 
 messageData <- data.frame(

@@ -1,5 +1,6 @@
 header <-   dashboardHeader(
     # disable = TRUE,
+    titleWidth = "250px",
     title = "First Dashbord",
     dropdownMenu(
       type = "messages",
