@@ -11,6 +11,7 @@ sidebar <- dashboardSidebar(
       menuItem("tab", icon = icon("table"), tabName = "tab"),
       menuItem("infoBox", icon = icon("info"), tabName = "infoBox"),
       menuItem("valueBox", icon = icon("value"), tabName = "valueBox"),
-      menuItem("column", icon = icon("columns"), tabName = "column")
+      menuItem("column", icon = icon("columns"), tabName = "column"),
+      menuItem("columnrow", icon = icon("columns"), tabName = "columnrow")
     )
   )

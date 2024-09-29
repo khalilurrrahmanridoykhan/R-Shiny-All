@@ -135,6 +135,28 @@ body <- dashboardBody(
           box("Column 3", status = "danger", width = NULL)
         )
       )
+    ),
+    tabItem(
+      tabName = "columnrow",
+      fluidRow(
+        box("Row 1", width = 6, status = "primary"),
+        box(status = "warning", solidHeader = TRUE, "Row 2", width = 6),
+      ),
+      fluidRow(
+        column(
+          width = 4,
+          box("Column 1", status = "danger", width = NULL),
+          box("Column 2", status = "warning", width = NULL)
+        ),
+        column(
+          width = 6,
+          box("Column 3", status = "success", width = NULL)
+        ),
+        column(
+          width = 2,
+          box("Column 4", status = "info", width = NULL)
+        )
+      )
     )
   )
 )

@@ -6,6 +6,7 @@ source("body.R")
 source("header.R")
 
 ui <- dashboardPage(
+  skin = "green",
   header,
   sidebar,
   body
@@ -61,7 +62,7 @@ server <- function(input, output) {
       color = "yellow"
     )
   })
-                
+                                     
   output$progressBox1 <- renderInfoBox({
     infoBox(
       "Progress",
